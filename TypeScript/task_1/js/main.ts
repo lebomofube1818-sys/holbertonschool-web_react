@@ -1,12 +1,14 @@
 interface Teacher {
-  firstName: string; // readonly-like behavior (no reassignment after init)
-  lastName: string;  // readonly-like behavior
+  firstName: string;
+  lastName: string;
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-
-  // allow any additional property
   [key: string]: any;
+}
+
+interface Directors extends Teacher {
+  numberOfReports: number;
 }
 
 const teacher3: Teacher = {
@@ -18,3 +20,13 @@ const teacher3: Teacher = {
 };
 
 console.log(teacher3);
+
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+console.log(director1);
