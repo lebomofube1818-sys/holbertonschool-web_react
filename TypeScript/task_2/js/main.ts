@@ -63,9 +63,22 @@ function executeWork(employee: Director | Teacher): string {
   return employee.workTeacherTasks();
 }
 
+// String literal type
+type Subjects = 'Math' | 'History';
+
+// Function
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }
+  return 'Teaching History';
+}
+
 // Test cases (VERY IMPORTANT)
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
